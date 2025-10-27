@@ -1,3 +1,5 @@
+/* The PostModel class manages user posts, allowing for creating, updating, deleting, and retrieving
+posts based on user IDs. */
 import UserModel from "../../users/model/user.model.js";
 
 let posts = [];

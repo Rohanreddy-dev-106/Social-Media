@@ -7,10 +7,10 @@ import express from "express"
 
 const router=express.Router();
 
-router.get("/allposts",PostController.getAllpost)
-router.post("/create",PostController.creatpost)
-router.put("/update",PostController.updatepost)
-router.delete("/delete", PostController.deletepost)
+router.get("/allposts",jwtAuth,PostController.getAllpost)
+router.post("/create",jwtAuth ,PostController.creatpost)
+router.put("/update",jwtAuth ,PostController.updatepost)
+router.delete("/delete",jwtAuth, PostController.deletepost)
 
 
 
