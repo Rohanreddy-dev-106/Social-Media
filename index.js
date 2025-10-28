@@ -1,17 +1,23 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import CORS from "cors";
 import Userrouts from "./src/fetures/users/routes/user.routes.js"
 import Postrouts from "./src/fetures/posts/routes/post.routs.js"
 import Likes from "./src/fetures/Likes/routes/like.routs.js"
-let server=express();
+let server = express();
 server.use(express.json())
 server.use(cookieParser())
 server.use(express.static("public"));
+const corsoptions = {
+  origin: "*",
+  allowedHeadders: "*"
+}
+server.use(CORS(corsoptions))
 
 // server.use("/api/posts")
-server.use("/api/users",Userrouts)
-server.use("/api/posts",Postrouts)
-server.use("/api/posts",Likes)
+server.use("/api/users", Userrouts)
+server.use("/api/posts", Postrouts)
+server.use("/api/posts", Likes)
 // server.use("/api/card")
 
 server.use((req, res, next) => {
@@ -34,4 +40,4 @@ server.use((req, res, next) => {
   `);
 });
 
-export {server}
+export { server }
