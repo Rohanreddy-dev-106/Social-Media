@@ -8,7 +8,7 @@ import express from "express"
 
 const router=express.Router();
 
-router.get("/allposts",jwtAuth,PostController.getAllpost)
+router.get("/allposts",PostController.getAllpost)
 router.post("/create",jwtAuth, fileurl.single("image"),PostController.creatpost)
 router.put("/update",jwtAuth ,PostController.updatepost)
 router.delete("/delete",jwtAuth, PostController.deletepost)

@@ -14,8 +14,8 @@ server.use(cookieParser())
 server.use(express.static("public"));
 const data = JSON.parse(fs.readFileSync("./swagger.json", 'utf8'));
 const corsoptions = {
-  origin: "*",
-  allowedHeadders: "*"
+  origin: "http://127.0.0.1:3000", 
+    credentials: true,               
 }
 server.use(CORS(corsoptions))
 
