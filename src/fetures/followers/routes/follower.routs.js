@@ -11,6 +11,6 @@ router.post("/create", jwtAuth, FollowController.createnewfollowdata);
 router.post("/followme", jwtAuth, FollowController.follow);
 
 
-router.post("/unfollowme", jwtAuth, FollowController.unfollow);
+router.delete("/unfollowme", jwtAuth, FollowController.unfollow);
 
 export default router;

@@ -1,21 +1,27 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import CORS from "cors";
+import fs from "fs";
+import swaggerUI from "swagger-ui-express";
 import Userrouts from "./src/fetures/users/routes/user.routes.js"
 import Postrouts from "./src/fetures/posts/routes/post.routs.js"
 import Likes from "./src/fetures/Likes/routes/like.routs.js"
 import Followers from "./src/fetures/followers/routes/follower.routs.js"
+
 let server = express();
 server.use(express.json())
 server.use(cookieParser())
 server.use(express.static("public"));
+const data = JSON.parse(fs.readFileSync("./swagger.json", 'utf8'));
 const corsoptions = {
   origin: "*",
   allowedHeadders: "*"
 }
 server.use(CORS(corsoptions))
 
-// server.use("/api/posts")
+
+
+server.use("/api-doc-socialmedia",swaggerUI.serve,swaggerUI.setup(data))
 server.use("/api/users", Userrouts)
 server.use("/api/posts", Postrouts)
 server.use("/api/posts", Likes)
