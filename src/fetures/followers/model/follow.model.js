@@ -82,4 +82,5 @@ export default class FollowModel {
 // --- dummy data ---
 follow.push(new FollowModel(1, { followers: [2], following: [2] }));
 follow.push(new FollowModel(2, { followers: [1], following: [1] }));
+follow.push(new FollowModel(3, { followers: [1], following: [2] }));
 

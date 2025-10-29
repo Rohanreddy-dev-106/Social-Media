@@ -8,9 +8,9 @@ const router = express.Router();
 router.post("/create", jwtAuth, FollowController.createnewfollowdata);
 
 
-router.post("/follow", jwtAuth, FollowController.follow);
+router.post("/followme", jwtAuth, FollowController.follow);
 
 
-router.post("/unfollow", jwtAuth, FollowController.unfollow);
+router.post("/unfollowme", jwtAuth, FollowController.unfollow);
 
 export default router;
