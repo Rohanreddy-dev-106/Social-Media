@@ -41,7 +41,7 @@ server.use((req, res, next) => {
     </head>
     <body>
       <div class="alert alert-danger" role="alert">
-        Page not found (404) so please check our API docs at /api-doc-rohan
+        Page not found (404) so please check our API docs /api-doc-socialmedia
       </div>
     </body>
     </html>
