@@ -68,9 +68,4 @@ comments.push(
     ])
 );
 
-// Example usage:
-const user1 = CommentsModel.createCommentUser(1, 1);
-user1.addComment(1, "Awesome!", 5);
-user1.addComment(2, "Loved it!", 6);
 
-console.log(JSON.stringify(comments, null, 2));
